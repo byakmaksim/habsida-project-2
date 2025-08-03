@@ -6,12 +6,8 @@
 }
 html,
 body {
-  height: 100%;
+  min-height: 100vh;
   font-family: Arial, Helvetica, sans-serif;
-}
-button {
-  all: unset;
-  cursor: pointer;
 }
 .container {
   min-height: 600px;
@@ -19,29 +15,91 @@ button {
   display: flex;
   flex-direction: column;
 }
-.header{
+.main__title {
+  min-height: 40px;
+  padding: 8px 20px;
+  position: relative;
+  font-size: 28px;
+  min-width: 288px;
+}
+.main__title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background-color: #41f6d7;
+  border-radius: 0 12px 12px 0;
+}
+.services__nav {
+  display: flex;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 10px 0;
+  margin: 15px 0;
+  gap: 10px;
+  scroll-snap-align: x mandatory;
+}
+.read-more-icon {
+  width: 15px;
+  height: 15px;
+  margin-right: 8px;
+}
+.read-more {
+  margin-left: 20px;
+}
+.main {
+  padding: 25px 0px 25px 0px;
+  background-color: #f8f8f8;
+  min-height: 100vh;
+}
+.main__img {
+  margin: 30px 0px;
+}
+.main__aboutUs {
+  margin: 0px 15px 15px 15px;
+  color: #1b1c21;
+  font-size: 14px;
+}
+.services__item {
+  flex: 0 0 auto;
+  padding: 8px 12px;
+
+  scroll-snap-align: start;
+  white-space: nowrap;
+  color: #7e7e82;
+}
+.services__item:focus {
+  border: #41f6d7 2px solid;
+  border-radius: 8px;
+}
+button {
+  all: unset;
+  cursor: pointer;
+}
+
+.header {
   display: flex;
   justify-content: space-between;
   padding: 15px;
 }
-.servise{
+.servise {
   display: flex;
   gap: 15px;
-
 }
+
 .header__mobile {
   display: flex;
   justify-content: space-between;
   background-color: #ffffff;
   align-items: center;
   min-height: 90px;
- 
- 
-  
 }
+
 .header__right {
   display: flex;
- 
+
   gap: 15px;
   align-items: center;
 }
@@ -60,19 +118,54 @@ button {
   display: none;
 }
 
-.main__actions{
-display: none;
+.main__actions {
+  display: none;
+}
+.reviews {
+  display: none;
 }
 @media (min-width: 768px) {
   .header {
     display: flex;
     justify-content: space-between;
-    
   }
-  .header__mobile{
+  .reviews {
+    display: none;
+  }
+  .containerr {
+    margin-left: 20px;
+  }
+  .containerr p {
+    font-size: 14px;
+    margin-left: 10px;
+  }
+
+  .aboutUs-img {
+    display: flex;
+    justify-content: space-between;
+  }
+  .services__nav {
+    justify-content: space-between;
+  }
+  .container {
+    min-width: 784px;
+    min-height: 504px;
+  }
+  .header__mobile {
     display: flex;
     justify-content: space-around;
     gap: 15px;
+  }
+  .main__img {
+    border-radius: 8px;
+    margin: 10px 20px 0px 0px;
+    width: 45%;
+    height: auto;
+  }
+  .containerr {
+    max-width: 40%;
+  }
+  .main {
   }
   .contacts__logo {
     display: inline;
@@ -80,27 +173,53 @@ display: none;
   .header__divider-desktop {
     display: flex;
   }
-  .contacts{
+  .contacts {
     gap: 15px;
   }
-}
-@media (min-width: 1120px){
-.header{
-  display: none;
-}
-.support-service{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  .read-more {
+    margin-top: 20px;
+  }
 }
 
- .main__actions{
-display: inline-block;
-padding: 10px;
- }
+@media (min-width: 1120px) {
+  .header {
+    display: none;
+  }
+  .reviews {
+    display: inline-block;
+  }
+  .main__title {
+    position: absolute;
+    right: 20px;
+  }
+  .main__title::before {
+  }
 
- .header__repair{
-    display: inline;
+  .container {
+    padding: 30px 25px;
+    position: relative;
+  }
+  .support-service {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .main__actions {
+    display: flex;
+
+    gap: 30px;
+  }
+  .main__checkstatus {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .main__repair {
+    display: flex;
+    align-items: center;
+    gap: 10px;
   }
 }
 
@@ -108,21 +227,4 @@ padding: 10px;
   width: 2px;
   height: 32px;
   background-color: #eaeaea;
-}
-.main__title {
-  min-height: 40px;
-  padding: 10px 20px;
-  position: relative;
-  font-size: 28px;
-  min-width: 288px;
-}
-.main__title::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 4px;
-  height: 100%;
-  background-color: #41f6d7;
-  border-radius: 0 12px 12px 0;
 }
